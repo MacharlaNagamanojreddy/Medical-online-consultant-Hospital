@@ -11,33 +11,6 @@ MedFlow AI is a state-of-the-art, AI-driven healthcare management platform desig
 - **Premium Design Logic**: High-contrast dark medical theme with fluid animations and responsive layouts.
 - **Predictive Intelligence**: AI-powered features like Predictive Discharge and Automated Clinical Summaries.
 
----
-
-## 🔁 Workflow Diagram
-
-```mermaid
-flowchart TD
-    A["User Opens App"] --> B["Login via Supabase Auth"]
-    B --> C{"User Role"}
-
-    C -->|"Patient"| D["Patient Portal"]
-    C -->|"Doctor"| E["Doctor Portal"]
-    C -->|"Admin"| F["Admin Portal"]
-    C -->|"Family"| G["Family Portal"]
-
-    D --> H["Portal Action (Chat / Appointments / Records)"]
-    E --> H
-    F --> H
-    G --> H
-
-    H --> I["Call ai-agent Edge Function"]
-    I --> J["OpenAI Model Response"]
-    J --> K["Store/Read Data in Supabase"]
-    K --> L["Real-time UI Update"]
-```
-
----
-
 ## 📖 Build History & Walkthroughs
 
 The project was developed over a 5-day intensive build. You can explore the detailed evolution here:
@@ -124,3 +97,28 @@ MedFlow AI leverages a sophisticated `ai-agent` edge function (implemented with 
 
 ## ✅ Final Project Status: 100% COMPLETED
 All milestones from the 5-day roadmap have been successfully implemented, verified, and polished. MedFlow AI is ready for demonstration.
+
+---
+
+## 🔁 Workflow Diagram
+
+```mermaid
+flowchart TD
+    A["User Opens App"] --> B["Login via Supabase Auth"]
+    B --> C{"User Role"}
+
+    C -->|"Patient"| D["Patient Portal"]
+    C -->|"Doctor"| E["Doctor Portal"]
+    C -->|"Admin"| F["Admin Portal"]
+    C -->|"Family"| G["Family Portal"]
+
+    D --> H["Portal Action (Chat / Appointments / Records)"]
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I["Call ai-agent Edge Function"]
+    I --> J["OpenAI Model Response"]
+    J --> K["Store/Read Data in Supabase"]
+    K --> L["Real-time UI Update"]
+```
