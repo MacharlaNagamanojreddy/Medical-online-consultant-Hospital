@@ -13,6 +13,31 @@ MedFlow AI is a state-of-the-art, AI-driven healthcare management platform desig
 
 ---
 
+## 🔁 Workflow Diagram
+
+```mermaid
+flowchart TD
+    A["User Opens App"] --> B["Login via Supabase Auth"]
+    B --> C{"User Role"}
+
+    C -->|"Patient"| D["Patient Portal"]
+    C -->|"Doctor"| E["Doctor Portal"]
+    C -->|"Admin"| F["Admin Portal"]
+    C -->|"Family"| G["Family Portal"]
+
+    D --> H["Portal Action (Chat / Appointments / Records)"]
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I["Call ai-agent Edge Function"]
+    I --> J["OpenAI Model Response"]
+    J --> K["Store/Read Data in Supabase"]
+    K --> L["Real-time UI Update"]
+```
+
+---
+
 ## 📖 Build History & Walkthroughs
 
 The project was developed over a 5-day intensive build. You can explore the detailed evolution here:
