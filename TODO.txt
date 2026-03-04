@@ -1,0 +1,37 @@
+MEDFLOW AI MVP BUILD ROADMAP
+
+[X] DAY 1: DATABASE + DATA INTERPRETER AGENT (COMPLETED)
+-------------------------------------------------------
+[X] Database Setup (Tables, SQL script, Auth)
+[X] Create Test Accounts (Patient, Doctor, Admin, Family)
+[X] UI Foundation in Lovable (Dark theme, Redirection)
+[X] AI Edge Function Deployment (Claude API integration)
+
+[X] DAY 2: PATIENT AGENT (CHATBOT + APPOINTMENTS) (COMPLETED)
+--------------------------------------------------
+[X] Patient Dashboard (Meds, Apps, Welcome)
+[X] Patient Chat Interface (WhatsApp-style)
+[X] Appointment Booking Flow (Calendar picker)
+[X] Symptom Triage AI System
+
+[X] DAY 3: DOCTOR AGENT (DASHBOARD + CLINICAL TOOLS) (COMPLETED)
+----------------------------------------------------
+[X] Doctor Dashboard (Schedule & Queue)
+[X] Patient Briefing Card (AI Summary)
+[X] SOAP Note Generator (AI Formatting)
+[X] Order Management (Labs/Imaging/Meds)
+
+[X] DAY 4: HOSPITAL AGENT + FAMILY AGENT (COMPLETED)
+-----------------------------------------
+[X] Admin Dashboard (Occupancy & Stats)
+[X] Bed Management Board (Visual Grid)
+[X] Staff Schedule View
+[X] Family Portal (Plain language updates)
+[X] Visit Scheduler
+
+[X] DAY 5: INTEGRATION + POLISH + DEMO (COMPLETED)
+---------------------------------------
+[X] Notification Flow (Real-time updates)
+[X] Role-Based Navigation Menu
+[X] Demo Scenarios (ER, Cardiology, Admin)
+[X] UI Polish & Deployment

@@ -1,0 +1,4 @@
+project_id = "pcbvuvaznomffnguwiaw"
+
+[functions.ai-agent]
+verify_jwt = false

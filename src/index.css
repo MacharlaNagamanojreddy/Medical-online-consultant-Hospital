@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 225 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 225 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 25% 10%;
+
+    --primary: 174 72% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 225 25% 10%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --accent: 174 72% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 174 72% 40%;
+
+    --radius: 0.75rem;
+
+    --glass-bg: 225 25% 8% / 0.6;
+    --glass-border: 225 15% 20% / 0.4;
+    --glow-primary: 174 72% 40% / 0.15;
+
+    --sidebar-background: 225 25% 5%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 174 72% 40%;
+    --sidebar-primary-foreground: 225 33% 3%;
+    --sidebar-accent: 225 20% 12%;
+    --sidebar-accent-foreground: 210 40% 90%;
+    --sidebar-border: 225 15% 15%;
+    --sidebar-ring: 174 72% 40%;
+    
+    /* Premium Tokens */
+    --clinical-teal: 174 72% 40%;
+    --clinical-blue: 199 89% 48%;
+    --clinical-purple: 262 83% 58%;
+    --clinical-dark: 225 25% 4%;
+  }
+
+  .dark {
+    --background: 225 25% 4%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border;
+    background: linear-gradient(135deg, hsla(225, 25%, 8%, 0.7) 0%, hsla(225, 25% , 5%, 0.9) 100%);
+    border-color: hsla(225, 15%, 20%, 0.4);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+      0 0 40px hsla(var(--glow-primary)),
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 hsla(225, 15%, 25%, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    border-color: hsla(var(--clinical-teal) / 0.4);
+    box-shadow: 
+      0 0 50px hsla(var(--glow-primary)),
+      0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .clinical-pulse {
+    animation: pulseGlow 2s infinite;
+  }
+
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 hsla(var(--clinical-teal) / 0.2); }
+    70% { box-shadow: 0 0 0 10px hsla(var(--clinical-teal) / 0); }
+    100% { box-shadow: 0 0 0 0 hsla(var(--clinical-teal) / 0); }
+  }
+
+  .demo-btn {
+    @apply px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300 border cursor-pointer backdrop-blur-md;
+    background: hsla(225, 25%, 12%, 0.5);
+    border-color: hsla(225, 15%, 25%, 0.4);
+    color: hsl(var(--muted-foreground));
+  }
+
+  .demo-btn:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+    box-shadow: 0 0 20px hsla(var(--glow-primary));
+  }
+}
